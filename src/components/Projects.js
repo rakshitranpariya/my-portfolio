@@ -2,8 +2,7 @@ import React,{useEffect} from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import ProjectComponent from './ProjectComponent/ProjectComponent';
-import "./Projects.css";
-import './GeneralSection.css'
+import styles from './sectionCard.module.css';
 import leftArrow from '../Images/left-button.png';
 import rightArrow from '../Images/right-button.png';
 
@@ -61,11 +60,11 @@ function Projects() {
 useEffect(()=>{fetchData();},[]);
   return (
 
-    <section id="Project" className="general container ">
-      <div class="project">
+    <section id="Project" className={`${styles.general} container `}>
+      <div className={styles.particularPage}>
 
-        <div className="carousel-container" id="carousel-container" >
-          <div className="carousel-grid" 
+        <div className={styles.carouselContainer} >
+          <div className={styles.carouselGrid}
           onTouchStart={handleTouchStart} 
           onTouchEnd={handleTouchEnd}
           style={{
@@ -76,7 +75,7 @@ useEffect(()=>{fetchData();},[]);
             {
               projectData.length === 0 ? <p>Loading...</p> :
               projectData.map((data, index) => (
-                <div className="individual-card" key={index}>
+                <div className={styles.individualCard} key={index}>
                 <ProjectComponent  sendData={data} />
                 </div>
               ))
@@ -85,19 +84,16 @@ useEffect(()=>{fetchData();},[]);
         </div>
       
   
-        <div className='button-container'>
-          <button onClick={handlePrev} className={`right ${currentIndex === 0 ? "disabled" : ""}` }disabled={currentIndex === 0}>
-            <img src={leftArrow} alt="Previous" className="nav-image" />
+        <div className={styles.buttonContainer}>
+          <button onClick={handlePrev} className={`${currentIndex === 0 ? styles.disabled : ''}` }disabled={currentIndex === 0}>
+            <img src={leftArrow} alt="Previous" className={styles.navImage} />
           </button>
   
-          <button onClick={handleNext} className={`left ${currentIndex === projectData.length - 1 ? "disabled" : ""}` }disabled={currentIndex === projectData.length - 1 } >
-            <img src={rightArrow} alt="Next" className="nav-image" />
+          <button onClick={handleNext} className={`${currentIndex === projectData.length - 1 ? styles.disabled : ''}` }disabled={currentIndex === projectData.length - 1 } >
+            <img src={rightArrow} alt="Next" className={styles.navImage} />
           </button>
         </div>
-
       </div>
-
-      
     </section>
      
   );

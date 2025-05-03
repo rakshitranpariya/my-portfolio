@@ -63,9 +63,9 @@
     z-index: 1000; 
     display: flex;
     justify-content: flex-end;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.162), rgb(255, 255, 255)); /* Gradient from transparent to opaque */
+    background: linear-gradient(to right, rgba(243, 243, 243, 0.549), rgb(255, 255, 255)); /* Gradient from transparent to opaque */
     border-radius: 25px;
-    box-shadow: 0px 0px 100px ;
+    box-shadow: 10px 10px 60px  ;
   }
   
   nav a {
@@ -84,7 +84,7 @@
   }
   
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
   }
   
   Element{

@@ -1,0 +1,185 @@
+
+.educationFirstPage{
+    display : flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.primaryInformationSection{
+    height: 70%;
+    margin: 0px 0px 0px 0px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(112, 167, 255, 0.104);
+    flex-direction: row;
+}
+
+.imageContainer{
+    background-color: rgba(127, 255, 212, 0);
+    display: flex;
+    justify-content: center;
+}
+.institutionImage{
+    padding-top: 5%;
+    width : 80%;
+     height : 50%;
+    /* object-fit: inherit; */
+}
+.institutionTitle{
+    display : flex;
+    align-items: center;
+}
+    
+.descriptionContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    padding-left: 10px;
+    height: max-content;
+}
+.degreeTitle{
+  display: flex ;
+    font-size:3rem;
+    font-weight: 800;
+    line-height: 1.0;
+    color: rgb(0, 0, 0);
+}
+.graduationHatImage{
+    width: 40px;
+    height: 40px;
+    margin-right: 1px;
+}
+.instituteName{
+    font-size: 1.9rem;
+    font-weight: 550;
+    color: rgba(0, 0, 0, 0.749);
+    /* margin-left: 10px; */
+}
+.locationDiv{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.locationImage{
+    width: 25px;
+    height: 25px;
+    /* margin-left: 5px; */
+}
+.location{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.583);
+    margin-left: 2px;
+    white-space: nowrap;
+
+}
+.bubbleSection {
+    height: auto;
+    background-color: rgba(25, 15, 226, 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px 14px;           
+    /* margin: 18px; */
+    padding-top: 15px;
+  }
+  
+  .bubbleChip {
+    margin: 5px 5px;
+    color: #000000;
+    white-space: nowrap;
+    padding : 5px 20px;
+    background-color: rgba(209, 225, 251, 0.104);
+    display: flex  ;
+    justify-content: center;   
+    align-items: center;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    letter-spacing: 0.2px;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.133);
+    user-select: none;
+  }
+  .bubbleChip:hover {
+    background-color: rgba(112, 167, 255, 0.104);;
+    color: rgb(0, 0, 0);
+    box-shadow: -2px -2px 10px rgba(63, 63, 63, 0.212) inset;
+  }
+
+  .triSection{
+    background-color: rgba(25, 15, 226, 0);
+    display: flex;
+    width: 100%;
+  }
+.gpsSection{
+  display: flex ;
+  justify-content: start;
+}
+.triSectionLeft{
+  background-color: rgba(59, 50, 236, 0.99);
+}
+
+  .triSectionRight{
+    flex-direction: row;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 2rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+  }
+  .durationDiv{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 1.5rem;
+    font-weight: 100;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 767.98px) {
+
+
+    .mobilePrimaryInformationSection {
+      height: 100vh;
+    }
+    .mobileInstituteImage {
+      width: auto;
+      height: 30vh;
+    }
+    .mobiletriSectionRight{
+      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0);
+      font-size: 1.5rem;
+      font-weight: 400;
+      white-space: nowrap;
+      width : 30%;
+      margin:0px;
+    }
+    .mobileInstitutionTitle{
+
+      display : flex;
+      align-items: center;
+  }
+  .mobileDegreeTitle{
+    display: flex ;
+      font-size:2.5rem;
+      font-weight: 700;
+      line-height: 1.0;
+      color: rgb(0, 0, 0);
+  }
+  
+
+    
+  }

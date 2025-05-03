@@ -18,7 +18,7 @@ function ProjectFirstPage({sendData}) {
     return(
             <div className="container-fluid project-first-page">
 <h2>{InstitutionName}</h2>
-    <img src={ImageLink} alt="Dynamic Example" className='institution-logo'></img>
+    {/* <img src={ImageLink} alt="Dynamic Example" className='institution-logo'></img> */}
     <p><strong>Degree:</strong> {Degree}</p>
     <p><strong>Major:</strong> {Major}</p>
     <p><strong>Location:</strong> {Location}</p>

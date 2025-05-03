@@ -2,34 +2,32 @@ import React,{useEffect} from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import EducationComponent from './EducationComponent/EducationComponent';
-import "./Education.css";
-import './GeneralSection.css'
+import styles from './sectionCard.module.css';
 import leftArrow from '../Images/left-button.png';
 import rightArrow from '../Images/right-button.png';
 
-function Education() {
+function Education(){
   const [educationData, setEducationData] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0); // Track the current card index
-  const [startX, setStartX] = useState(0); // Track the starting position of the touch
+  const [currentIndex, setCurrentIndex] = useState(0); 
+  const [startX, setStartX] = useState(0); 
 
   const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX); // Save the starting X coordinate
+    setStartX(e.touches[0].clientX); 
   };
 
-  // Handle swipe end
   const handleTouchEnd = (e) => {
     if (startX === null) return;
-    const endX = e.changedTouches[0].clientX; // Get the ending X coordinate
+    const endX = e.changedTouches[0].clientX; 
     const difference = startX - endX;
     console.log("calculating the difference")
-    // Threshold to detect a swipe (adjust as needed)
+    
     if (difference > 50) {
-      // Swipe left
+      
       if(currentIndex!==educationData.length - 1){
         handleNext();
       }
     } else if (difference < -50) {
-      // Swipe right
+      
       if(currentIndex!==0){
         handlePrev();
       }
@@ -58,14 +56,17 @@ function Education() {
     console.error('Error fecthing data:',error.message);
   }
 };
+
 useEffect(()=>{fetchData();},[]);
-  return (
+  return ( 
 
-    <section id="Education" className="general container ">
-      <div class="education">
+    <section id="Education" className={`${styles.general} container `}>
 
-        <div className="carousel-container" id="carousel-container" >
-          <div className="carousel-grid" 
+      <div class={styles.particularPage}>
+
+        <div className={styles.carouselContainer}  >
+          <div 
+          className={styles.carouselGrid} 
           onTouchStart={handleTouchStart} 
           onTouchEnd={handleTouchEnd}
           style={{
@@ -76,7 +77,7 @@ useEffect(()=>{fetchData();},[]);
             {
               educationData.length === 0 ? <p>Loading...</p> :
               educationData.map((data, index) => (
-                <div className="individual-card" key={index}>
+                <div className={styles.individualCard} key={index}>
                 <EducationComponent  sendData={data} />
                 </div>
               ))
@@ -84,22 +85,18 @@ useEffect(()=>{fetchData();},[]);
           </div>
         </div>
       
-  
-        <div className='button-container'>
-          <button onClick={handlePrev} className={`right ${currentIndex === 0 ? "disabled" : ""}` }disabled={currentIndex === 0}>
-            <img src={leftArrow} alt="Previous" className="nav-image" />
-          </button>
-  
-          <button onClick={handleNext} className={`left ${currentIndex === educationData.length - 1 ? "disabled" : ""}` }disabled={currentIndex === educationData.length - 1 } >
-            <img src={rightArrow} alt="Next" className="nav-image" />
+        <div className={styles.buttonContainer}>
+          <button onClick={handlePrev} className={`${currentIndex === 0 ? styles.disabled : ""}` } disabled={currentIndex === 0}>
+            <img src={leftArrow} alt="Previous" className={styles.navImage}/>
+          </button>  
+          <button onClick={handleNext} className={`${currentIndex === educationData.length - 1 ? styles.disabled : ""}`} disabled={currentIndex === educationData.length - 1 } >
+            <img src={rightArrow} alt="Next" className={styles.navImage} />
           </button>
         </div>
 
       </div>
-
       
     </section>
-     
   );
 }
 

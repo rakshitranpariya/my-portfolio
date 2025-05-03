@@ -1,5 +1,5 @@
 import {React,useState} from 'react';
-import "./EducationComponent.css";
+import styles from "./EducationComponent.module.css";
 import EducationFirstPage from './EducationFirstPage';
 import EducationSecondPage from './EducationSecondPage';
 function EducationComponent({sendData}){
@@ -7,7 +7,7 @@ function EducationComponent({sendData}){
 const [activeDotIndex, setActiveDotIndex] = useState(0);
 
     function toggleDot(){
-      console.log("togle was clicked");
+      console.log("toggle was clicked");
       if(activeDotIndex === 0){
         setActiveDotIndex(1);
       }
@@ -15,45 +15,33 @@ const [activeDotIndex, setActiveDotIndex] = useState(0);
         setActiveDotIndex(0);
       }
     }
+
     if (!sendData || sendData.length === 0) {
       console.log("No data received yet.");
       return <p>Loading...</p>; 
     }
     
-    const {
-      InstitutionName,
-      Degree,
-      Major,
-      Location,
-      Duration,
-      Gpa,
-      TotalGpa,
-      Courses,
-      ImageLink,
-      Description
-    } = sendData;
-    
       
     return (
-    <div className="container education-component" >
+    <div className={`container ${styles.educationComponent}`} >
 
-      <div className="dot-section">
-        <div className={activeDotIndex===0?"active-dot":"dot"} onClick={toggleDot}></div>
-        <div className={activeDotIndex===1?"active-dot":"dot"}onClick={toggleDot}></div>
+      <div className={`${styles.dotSection}`}>
+        <div className={activeDotIndex===0?styles.activeDot:styles.dot} onClick={toggleDot}></div>
+        <div className={activeDotIndex===1?styles.activeDot:styles.dot} onClick={toggleDot}></div>
       </div>
     
-      <div className="page-grid"  style={{
-            transform: `translateX(-${activeDotIndex===0? (activeDotIndex * 100 ) : (activeDotIndex * 100 ) }% )`,
+      <div className={`${styles.pageGrid}`}  
+            style={{
+            transform: `translateX(-${activeDotIndex * 100}% )`,
             transition: "transform 1s ease",
-          }}>
-        <div className="individual-page">
+            }}>
+        <div className={`${styles.individualPage}`}>
         <EducationFirstPage sendData={sendData} />
         </div>
-        <div className="individual-page">
+        <div className={`${styles.individualPage}`}>
         <EducationSecondPage sendData = {sendData}/>
         </div>
       </div>
-    
     </div>
   );
 }

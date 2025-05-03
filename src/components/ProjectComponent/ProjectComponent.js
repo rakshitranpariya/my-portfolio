@@ -1,5 +1,5 @@
 import {React,useState} from 'react';
-import "./ProjectComponent.css";
+import styles from "./ProjectComponent.module.css";
 import ProjectFirstPage from './ProjectFirstPage';
 import ProjectSecondPage from './ProjectSecondPage';
 function ProjectComponent({sendData}){
@@ -35,21 +35,21 @@ const [activeDotIndex, setActiveDotIndex] = useState(0);
     
       
     return (
-    <div className="container project-component" >
+      <div className={`container ${styles.projectComponent}`} >
 
-      <div className="dot-section">
-        <div className={activeDotIndex===0?"active-dot":"dot"} onClick={toggleDot}></div>
-        <div className={activeDotIndex===1?"active-dot":"dot"}onClick={toggleDot}></div>
+      <div className="dotSection">
+        <div className={activeDotIndex===0?"activeDot":"dot"} onClick={toggleDot}></div>
+        <div className={activeDotIndex===1?"activeDot":"dot"}onClick={toggleDot}></div>
       </div>
     
-      <div className="page-grid"  style={{
-            transform: `translateX(-${activeDotIndex===0? (activeDotIndex * 100 ) : (activeDotIndex * 100 ) }% )`,
+      <div className="pageGrid"  style={{
+            transform: `translateX(-${activeDotIndex * 100}% )`,
             transition: "transform 1s ease",
           }}>
-        <div className="individual-page">
+        <div className="individualPage">
         <ProjectFirstPage sendData={sendData} />
         </div>
-        <div className="individual-page">
+        <div className="individualPage">
         <ProjectSecondPage sendData = {sendData}/>
         </div>
       </div>

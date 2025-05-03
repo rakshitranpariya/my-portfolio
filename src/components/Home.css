@@ -3,6 +3,7 @@
     align-items: center;
     display: flex;
     background-color: rgb(255, 255, 255);
+    flex-direction: row;
     width: 100%;
 }
 .hero-section{
@@ -63,3 +64,19 @@
     width: 70%;
 }
 
+.custom-button{
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    border: 1px solid black; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-radius: 45px; 
+    cursor: pointer; 
+  }
+  .custom-button:hover{
+    background-color: #000000; 
+    color: rgb(255, 255, 255); 
+    border: 1px solid rgb(255, 255, 255); 
+  }
+
+  

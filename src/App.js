@@ -23,7 +23,7 @@ setMenuOpen(false);
   return (
     <div>
       {/* navigation */}
-      <div className="nav-container d-none d-sm-block ">
+      <div className="nav container d-none d-sm-block ">
         <nav>
           <div className="options">
             <Link to="Home" smooth duration={500} onSetActive={()=> handleSetActive("Home")} spy={true} activeClass={activeSection === "Home" ? "active-link" : ""}>Home</Link>

@@ -1,23 +1,15 @@
 import React from "react";
-import "./EducationSecondPage.css";
 import { data } from "react-router-dom";
+import styles from "./EducationSecondPage.module.css";
+
 
 function EducationSecondPage({sendData}) {
     const {
-        InstitutionName,
-        Degree,
-        Major,
-        Location,
-        Duration,
-        Gpa,
-        TotalGpa,
-        Courses,
-        ImageLink,
         Description
       } = sendData;
       console.log("Description",Description);
     return(
-            <div className="container-fluid education-page">
+            <div className={`container-fluid ${styles.educationSecondPage}`}>
             <strong>Description:</strong>
             <p>
                 {Description}
