@@ -1,43 +1,91 @@
-import { useState } from 'react';
-import './App.css';
-import { Link, Element } from 'react-scroll';
-import Home from './components/Home';
-import Contact from './components/Contact';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
+import { useState } from "react";
+import "./index.css"; // must be before component CSS imports
+
+import "./App.css";
+
+import { Link, Element } from "react-scroll";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
 
 function App() {
   const [activeSection, setActiveSection] = useState("Home");
-  const [menuOpen,setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const handleSetActive = (section) => {
     console.log("Active Section:", section);
     setActiveSection(section);
   };
-const toggleMenu = (menuOpen)=>{
-setMenuOpen((prev)=>!prev);
-}
-const closeMenu = ()=> {
-setMenuOpen(false);
-}
+  const toggleMenu = (menuOpen) => {
+    setMenuOpen((prev) => !prev);
+  };
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
   return (
     <div>
       {/* navigation */}
       <div className="nav container d-none d-sm-block ">
         <nav>
           <div className="options">
-            <Link to="Home" smooth duration={500} onSetActive={()=> handleSetActive("Home")} spy={true} activeClass={activeSection === "Home" ? "active-link" : ""}>Home</Link>
-            <Link to="Education" smooth duration={500} onSetActive={()=> handleSetActive("Education")} spy={true} activeClass={activeSection === "Education" ? "active-link" : ""}>Education </Link>
-            <Link to="Experience" smooth duration={500} onSetActive={()=> handleSetActive("Experience")} spy={true} activeClass={activeSection === "Experience" ? "active-link" : ""}>Experience </Link>
-            <Link to="Projects" smooth duration={500} onSetActive={()=> handleSetActive("Projects")} spy={true} activeClass={activeSection === "Projects" ? "active-link" : ""}>Projects</Link>
-            <Link to="Contact" smooth duration={500} onSetActive={()=> handleSetActive("Contact")} spy={true} activeClass={activeSection === "Contact" ? "active-link" : ""}>Contact</Link>
-          </div>       
+            <Link
+              to="Home"
+              smooth
+              duration={500}
+              onSetActive={() => handleSetActive("Home")}
+              spy={true}
+              activeClass={activeSection === "Home" ? "active-link" : ""}
+            >
+              Home
+            </Link>
+            <Link
+              to="Education"
+              smooth
+              duration={500}
+              onSetActive={() => handleSetActive("Education")}
+              spy={true}
+              activeClass={activeSection === "Education" ? "active-link" : ""}
+            >
+              Education{" "}
+            </Link>
+            <Link
+              to="Experience"
+              smooth
+              duration={500}
+              onSetActive={() => handleSetActive("Experience")}
+              spy={true}
+              activeClass={activeSection === "Experience" ? "active-link" : ""}
+            >
+              Experience{" "}
+            </Link>
+            <Link
+              to="Projects"
+              smooth
+              duration={500}
+              onSetActive={() => handleSetActive("Projects")}
+              spy={true}
+              activeClass={activeSection === "Projects" ? "active-link" : ""}
+            >
+              Projects
+            </Link>
+            <Link
+              to="Contact"
+              smooth
+              duration={500}
+              onSetActive={() => handleSetActive("Contact")}
+              spy={true}
+              activeClass={activeSection === "Contact" ? "active-link" : ""}
+            >
+              Contact
+            </Link>
+          </div>
         </nav>
       </div>
       {/* <div className='hamburger '>{activeSection}</div>       */}
 
-{/* Hamburger Menu for smaller screens */}
-<div className="hamburger-container d-sm-none">
+      {/* Hamburger Menu for smaller screens */}
+      <div className="hamburger-container d-sm-none">
         <div className="hamburger" onClick={toggleMenu}>
           ☰ {/* You can replace this with an icon */}
           <span>{activeSection}</span>
@@ -103,10 +151,6 @@ setMenuOpen(false);
         )}
       </div>
 
-
-
-
-
       {/* Sections */}
       <Element name="Home">
         <Home />
@@ -123,7 +167,6 @@ setMenuOpen(false);
       <Element name="Contact">
         <Contact />
       </Element>
-
     </div>
   );
 }
