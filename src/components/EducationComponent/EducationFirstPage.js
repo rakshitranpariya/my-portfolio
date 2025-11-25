@@ -96,16 +96,16 @@ function EducationFirstPage({ sendData }) {
   return (
     <div className={`container ${styles.educationFirstPage} `}>
       <div
-        className={`row ${styles.primaryInformationSection} ${styles.mobilePrimaryInformationSection}`}
+        className={`row ${styles.primaryInformationSection} `}
       >
-        <div className={`col-md-4 col-12 ${styles.imageContainer}`}>
+        <div className={`col-lg-2 col-md-4 col-12 ${styles.imageContainer}`}>
           <img
             src={ImageLink}
             alt="Institution"
-            className={`${styles.institutionImage} ${styles.mobileInstituteImage}`}
+            className={`${styles.institutionImage}`}
           />
         </div>
-        <div className={`${styles.descriptionContainer}`}>
+        <div className={`col-lg-8 col-md-4 col-12 ${styles.descriptionContainer}`}>
           <div className={styles.educationTitleDiv}>
             <div className={` ${styles.degreeTitle}`}>
               {Degree} {Major}
@@ -115,14 +115,14 @@ function EducationFirstPage({ sendData }) {
 
           <div className={`row ${styles.triSection}`}>
             <div
-              className={`col-lg-6 col-md-12 col-7 d-flex flex-column justify-content-start triSection`}
+              className={`col-lg-6 col-md-12 col-7 d-flex flex-column justify-content-start ${styles.triSectionLeft}`}
             >
               <div className="sm-2 align-items-start" style={{ flex: 1 }}>
                 <div className={styles.locationDiv}>
                   <img
                     src={locationImage}
                     alt="Institution"
-                    className={styles.locationImage}
+                    className={styles.locationIcon}
                   />
                   <div className={styles.location}>{Location}</div>
                 </div>
@@ -135,7 +135,7 @@ function EducationFirstPage({ sendData }) {
 
             {/* second column gpa */}
             <div
-              className={`col-lg-6 col-md-12 col-5 ${styles.triSectionRight} ${styles.mobiletriSectionRight}`}
+              className={`col-lg-6 col-md-12 col-5 ${styles.triSectionRight} `}
             >
               <div className={`${styles.gpaSection}`}>
                 GPA : {Gpa}/{TotalGpa}
@@ -145,7 +145,7 @@ function EducationFirstPage({ sendData }) {
         </div>
       </div>
 
-      <div className={styles.secondaryInformationSection} ref={containerRef}>
+      <div className={`row ${styles.secondaryInformationSection}`} ref={containerRef}>
         <div className={styles.bubbleSection}>
           {tracks.map((_, trackIdx) => (
             <div className={styles.bubbleTrack} key={trackIdx}>
