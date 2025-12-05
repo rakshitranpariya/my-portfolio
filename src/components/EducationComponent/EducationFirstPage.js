@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./EducationFirstPage.module.css";
-import graduationHat from "../../Images/graduationHat.png";
 import locationImage from "../../Images/location.png";
-import gpaImage from "../../Images/gpaLogo.png";
 function getRowsCount(containerHeight, chipHeight, minRows = 1) {
   return Math.max(minRows, Math.floor(containerHeight / chipHeight));
 }
@@ -98,14 +96,14 @@ function EducationFirstPage({ sendData }) {
       <div
         className={`row ${styles.primaryInformationSection} `}
       >
-        <div className={`col-lg-2 col-md-4 col-12 ${styles.imageContainer}`}>
+        <div className={`col-lg-3 col-md-4 col-12 ${styles.imageContainer}`}>
           <img
             src={ImageLink}
             alt="Institution"
             className={`${styles.institutionImage}`}
           />
         </div>
-        <div className={`col-lg-8 col-md-4 col-12 ${styles.descriptionContainer}`}>
+        <div className={`col-lg-9 col-md-8 col-3 ${styles.descriptionContainer}`}>
           <div className={styles.educationTitleDiv}>
             <div className={` ${styles.degreeTitle}`}>
               {Degree} {Major}
@@ -115,7 +113,7 @@ function EducationFirstPage({ sendData }) {
 
           <div className={`row ${styles.triSection}`}>
             <div
-              className={`col-lg-6 col-md-12 col-7 d-flex flex-column justify-content-start ${styles.triSectionLeft}`}
+              className={`col-lg-6 col-md-12 col-9 d-flex flex-column justify-content-start ${styles.triSectionLeft}`}
             >
               <div className="sm-2 align-items-start" style={{ flex: 1 }}>
                 <div className={styles.locationDiv}>
@@ -133,7 +131,7 @@ function EducationFirstPage({ sendData }) {
               </div>
             </div>
 
-            {/* second column gpa */}
+        
             <div
               className={`col-lg-6 col-md-12 col-5 ${styles.triSectionRight} `}
             >
@@ -145,7 +143,7 @@ function EducationFirstPage({ sendData }) {
         </div>
       </div>
 
-      <div className={`row ${styles.secondaryInformationSection}`} ref={containerRef}>
+      <div className={`row d-none d-md-flex ${styles.secondaryInformationSection}`} ref={containerRef}>
         <div className={styles.bubbleSection}>
           {tracks.map((_, trackIdx) => (
             <div className={styles.bubbleTrack} key={trackIdx}>
