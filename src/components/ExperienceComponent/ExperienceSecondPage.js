@@ -8,7 +8,7 @@ function ExperienceSecondPage({ sendData }) {
 
   return (
     <div className={styles.experiencesecondpage}>
-      {/* Optional header context */}
+      {/* Optional header context
       <h3>
         {CompanyName} — {Role}
       </h3>
@@ -17,7 +17,7 @@ function ExperienceSecondPage({ sendData }) {
       <ul>
         {Array.isArray(Responsibilities) &&
           Responsibilities.map((item, idx) => <li key={idx}>{item}</li>)}
-      </ul>
+      </ul> */}
     </div>
   );
 }
