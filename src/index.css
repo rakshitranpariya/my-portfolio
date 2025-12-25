@@ -25,7 +25,7 @@ body {
     @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16;
   }
   .timeline-pointer {
-    @apply absolute inset-0 left-9 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26 md:left-14;
+    @apply absolute inset-0 left-9 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-26 md:left-15;
   }
   .timeline-pointer-left {
     @apply md:left-auto md:right-15;

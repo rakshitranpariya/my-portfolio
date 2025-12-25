@@ -1,59 +1,105 @@
 import { React, useState } from "react";
-import styles from "./EducationComponent.module.css";
-import EducationFirstPage from "./EducationFirstPage";
-import EducationSecondPage from "./EducationSecondPage";
-function EducationComponent({ sendData }) {
+
+import { MapPin, CalendarDays } from "lucide-react";
+
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const monthLabel = (m) => MONTHS[(Number(m) || 1) - 1];
+
+function EducationComponent({ data }) {
   const [activeDotIndex, setActiveDotIndex] = useState(0);
 
-  function toggleDot() {
-    console.log("toggle was clicked");
-    if (activeDotIndex === 0) {
-      setActiveDotIndex(1);
-    } else {
-      setActiveDotIndex(0);
-    }
-  }
-
-  if (!sendData || sendData.length === 0) {
+  if (!data || data.length === 0) {
     console.log("No data received yet.");
     return <p>Loading...</p>;
   }
 
+
+   const {
+    Degree,
+    Major,
+    InstitutionName,
+    Location,
+    FromMonth,
+    FromYear,
+    ToMonth,
+    ToYear,
+    Gpa,
+    TotalGpa,
+    ImageLink,
+    Description,
+    Courses,
+  } = data;
+
+   const formattedDate = `${monthLabel(FromMonth)} ${FromYear} - ${monthLabel(ToMonth)} ${ToYear}`;
   return (
-    <div className={`container ${styles.educationComponent}`}>
-      
-      <div className={`${styles.descriptionButtonSection}`}>
-        {activeDotIndex === 1 ? (
-          <button
-            className={`${styles.descriptionButton} btn btn-dark rounded-pill p-x-1`}
-            onClick={toggleDot}
-          >
-            <span className={styles.scalingText}>Close</span>
-          </button>
-        ) : (
-          <button
-            className={`${styles.descriptionButton} btn btn-grey rounded-pill p-x-1`}
-            onClick={toggleDot}
-          >
-            <span className={styles.scalingText}>Descrip</span>
-          </button>
-        )}{" "}
+    <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
+      {/* Header row: icon + titles */}
+      <div className="flex items-start gap-4">
+        <div className="w-12 h-12 rounded-lg mt-2 bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
+          {ImageLink ? (
+            <img
+              src={ImageLink}
+              alt={InstitutionName}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-blue-700 text-xl">🎓</span>
+          )}
+        </div>
+
+        <div className="min-w-0">
+          <h3 className="text-lg font-bold text-gray-900 leading-snug text-left">
+            {Degree}
+            {Major ? ` of ${Major}` : ""}
+          </h3>
+          <div className="text-blue-600 font-semibold truncate text-left ">
+            {InstitutionName}
+          </div>
+        </div>
       </div>
 
-      <div
-        className={`${styles.pageGrid}`}
-        style={{
-          transform: `translateY(-${activeDotIndex * 100}% )`,
-          transition: "transform 1s ease",
-        }}
-      >
-        <div className={`${styles.individualPage}`}>
-          <EducationFirstPage sendData={sendData} />
+      {/* Meta rows (like screenshot) */}
+      <div className="mt-4 space-y-2 text-sm text-gray-500">
+        <div className="flex items-center gap-2">
+          <MapPin size={16} className="text-gray-400" />
+          <span>{Location}</span>
         </div>
-        <div className={`${styles.individualPage}`}>
-          <EducationSecondPage sendData={sendData} />
+        <div className="flex items-center gap-2">
+          <CalendarDays size={16} className="text-gray-400" />
+          <span>{formattedDate}</span>
         </div>
+
+        {Gpa != null && (
+          <div className="text-gray-600 font-medium">
+            GPA: {Gpa}
+            {TotalGpa ? ` / ${TotalGpa}` : ""}
+          </div>
+        )}
       </div>
+
+      {/* Optional Description */}
+      {Description && (
+        <p className="mt-4 text-sm text-gray-700">{Description}</p>
+      )}
+
+      {/* Optional Courses (chips) */}
+      {Array.isArray(Courses) && Courses.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {Courses.slice(0, 8).map((c, i) => (
+            <span
+              key={i}
+              className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
+            >
+              {c}
+            </span>
+          ))}
+          {Courses.length > 8 && (
+            <span className="text-xs text-gray-500 self-center">
+              +{Courses.length - 8} more
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }

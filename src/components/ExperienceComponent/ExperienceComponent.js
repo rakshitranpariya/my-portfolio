@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import styles from "./ExperienceComponent.module.css";
-import ExperienceFirstPage from "./ExperienceFirstPage";
-import ExperienceSecondPage from "./ExperienceSecondPage";
+
 import { MapPin, Calendar, GraduationCap, BookOpen } from "lucide-react";
 
 const ExperienceComponent = ({ sendData, left = false }) => {
@@ -52,7 +51,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
 
   return (
     <div className="relative z-10">
-      {/* <img src={ImageLink} alt="" className="timeline-img" /> */}
+      
       <div className="relative timeline-img " />
       <div
         className={`timeline-container ${
@@ -65,11 +64,24 @@ const ExperienceComponent = ({ sendData, left = false }) => {
         />
         <div className="bg-white p-6 rounded-md shadow-md">
           {/* Header: Role + Company */}
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+          <div className="flex items-start gap-4">
+          <div className="w-12 h-12 mt-2 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
+          {ImageLink ? (
+            <img
+              src={ImageLink}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-blue-700 text-xl">🎓</span>
+          )}
+        </div>
+        <div className="min-w-0">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 m-0">
             {Role}
           </h2>
-          <p className="mt-1 text-blue-600 font-semibold">{CompanyName}</p>
-
+          <p className=" text-blue-600 font-semibold">{CompanyName}</p>
+          </div>
+</div>
           {/* Meta row */}
           <div className="mt-3 flex flex-wrap gap-3 text-sm text-gray-500">
             {Location && (
