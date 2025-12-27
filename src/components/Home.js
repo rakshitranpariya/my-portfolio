@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css';
 import styles from './sectionCard.module.css';
 
-import image1 from '../Images/image.png';
+import image1 from '../Images/portfolio-photo.png';
 
 function Home() {
   return (
