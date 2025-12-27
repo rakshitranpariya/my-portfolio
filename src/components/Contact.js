@@ -25,10 +25,10 @@ function Contact() {
             </div>
             <h3 className="mt-4 text-lg font-bold text-gray-900">Email</h3>
             <a
-              href="mailto:example@example.com"
+              href="mailto:rakshitranpariya@gmail.com"
               className="mt-2 block text-gray-600 hover:text-blue-600 break-words"
             >
-              example@example.com
+              rakshitranpariya@gmail.com
             </a>
           </div>
 
@@ -53,12 +53,12 @@ function Contact() {
             </div>
             <h3 className="mt-4 text-lg font-bold text-gray-900">LinkedIn</h3>
             <a
-              href="https://www.linkedin.com/in/your-handle/"
+              href="https://www.linkedin.com/in/rakshit-ranpariya/"
               target="_blank"
               rel="noreferrer"
               className="mt-2 block text-gray-600 hover:text-blue-600"
             >
-              your-handle
+              rakshitranpariya
             </a>
           </div>
         </div>
