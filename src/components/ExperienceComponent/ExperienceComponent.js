@@ -131,7 +131,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
               </div>
             )}
 
-            {/* //arrange the available data here. */}
+          
           </div>
         </div>
 
