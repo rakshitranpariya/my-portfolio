@@ -21,7 +21,7 @@ function EducationComponent({ data }) {
     console.log("No data received yet.");
     return <p>Loading...</p>;
   }
-
+// this is EducationComponent.js
   const {
     Degree,
     Major,
