@@ -1,4 +1,5 @@
-import React from "react";
+import { Download } from "lucide-react";
+
 import "./Home.css";
 import styles from "./sectionCard.module.css";
 import resumePDF from "../Assets/Rakshit_Ranpariya_Resume.pdf";
@@ -24,10 +25,16 @@ function Home() {
               <a
                 href={resumePDF}
                 download="Rakshit_Ranpariya_Resume.pdf"
-                className="custom-button text-decoration-none" // ensure custom-button style works on <a>
-                style={{ display: "inline-block", textAlign: "center" }} // fallback alignment
+                className="no-underline group relative inline-flex mt-4 items-center gap-2 overflow-hidden rounded-full bg-black/10 px-6 py-2.5 text-sm font-medium text-gray-900 shadow-sm ring-1 ring-black/5 backdrop-blur-md transition-all duration-300 hover:bg-white/50 hover:shadow-md hover:ring-black/10 focus:outline-none focus:ring-2 focus:ring-blue-500/20 active:scale-95"
               >
-                View My Work
+                <span className="relative z-10">Download Resume</span>
+                <Download
+                  size={16}
+                  className="relative z-10 text-gray-600 transition-transform duration-300 group-hover:translate-y-0.5 group-hover:text-gray-900"
+                />
+
+                {/* Optional subtle gradient shine (like iOS 'liquid' glass) */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </a>
             </div>
           </div>
