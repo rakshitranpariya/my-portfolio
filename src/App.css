@@ -14,8 +14,8 @@
   width: max-content;
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.843),
-    rgb(255, 255, 255)
+    rgba(255, 255, 255, 0.778),
+    rgba(255, 255, 255, 0)
   ); /* Gradient from transparent to opaque */
   z-index: 9999;
   border-radius: 25px;
@@ -24,18 +24,22 @@
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.206);
   font-size: 15px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .custom-menu {
   margin-top: 40px;
   position: fixed;
-  background: rgba(255, 255, 255, 0.394);
+  background: rgba(255, 255, 255, 0.486);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   display: flex;
   flex-direction: column;
   border-radius: 25px;
   width: 150px;
+   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .custom-menu a {
@@ -68,11 +72,13 @@ nav {
   justify-content: flex-end;
   background: linear-gradient(
     to right,
-    rgba(243, 243, 243, 0.549),
+    rgba(243, 243, 243, 0.083),
     rgb(255, 255, 255)
   ); /* Gradient from transparent to opaque */
   border-radius: 25px;
   box-shadow: 10px 10px 60px;
+   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 nav a {
