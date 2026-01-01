@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { useState } from "react";
 import flip_image from "../../Images/flip.png";
-import { CalendarDays, Github, ExternalLink } from "lucide-react";
+import { CalendarDays, Github } from "lucide-react";
 
 const MONTHS = [
   "Jan",
@@ -24,10 +24,10 @@ export default function ProjectComponent({ data }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   if (!data) return null;
-  const handleCardClick = () => {
-    setIsFlipped((prev) => !prev);
-    console.log("Card flipped!", { data, isFlipped });
-  };
+ 
+  // Handlers
+  const handleFlip = () => setIsFlipped(true); // Flip when hovering icon
+  const handleReset = () => setIsFlipped(false); // Reset when leaving card
   const {
     ProjectName,
     FromMonth,
@@ -48,7 +48,7 @@ export default function ProjectComponent({ data }) {
 
   return (
     <div
-      onClick={handleCardClick}
+      onMouseLeave={handleReset}
       className={clsx(
         " group rounded-xl  relative perspective-1000 flex flex-col h-full flex flex-col perspective-1000",
         {
@@ -57,21 +57,36 @@ export default function ProjectComponent({ data }) {
       )}
     >
       <div className=" h-full w-full transition-transform duration-500 [transform-style:preserve-3d] card-inner">
-        <div className="card-front flex flex-col bg-white backface-hidden p-6 rounded-xl shadow-md border border-gray-100 h-full w-full [backface-visibility:hidden]">
+        <div className="card-front flex flex-col bg-white backface-hidden p-4 rounded-xl shadow-md border border-gray-100 h-full w-full [backface-visibility:hidden]">
           {/* Absolute Positioned Flip Icon */}
           <img
             src={flip_image}
+            onMouseEnter={handleFlip}
             alt="Flip Icon"
             className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity"
           />
+          {/* Github Link (Below Flip Icon) */}
+          {hasValidLink && (
+            <a
+              href={Link}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="absolute top-14 right-4 z-20 text-gray-400 hover:text-black transition-colors p-1"
+              title="View on GitHub"
+            >
+              <Github size={20} />
+            </a>
+          )}
           {/* Title */}
-          <div className="flex flex-row justify-between items-start  gap-2 mb-2">
+          <div className="flex flex-row justify-between items-start  gap-2 mb-2 pr-8">
             <h3 className="text-xl font-extrabold text-gray-900">
               {ProjectName}
             </h3>
           </div>
 
           {/* Date row */}
+
           <div className="mt-0 flex items-center gap-2 text-sm text-gray-500">
             <CalendarDays size={16} className="text-gray-400" />
             <span>{formattedDate}</span>
@@ -86,7 +101,7 @@ export default function ProjectComponent({ data }) {
 
           {/* Tech chips */}
           {Array.isArray(TechStack) && TechStack.length > 0 && (
-            <div className="mt-1 mb-2 flex flex-wrap gap-2">
+            <div className="mt-1  flex flex-wrap gap-2">
               {TechStack.map((t, i) => (
                 <span
                   key={i}
@@ -97,34 +112,13 @@ export default function ProjectComponent({ data }) {
               ))}
             </div>
           )}
-          {/* Bottom button */}
-          <div className=" pt-4 border-t border-gray-100 mt-auto ">
-            <a
-              href={hasValidLink ? Link : "#"}
-              target={hasValidLink ? "_blank" : undefined}
-              rel={hasValidLink ? "noreferrer" : undefined}
-              className={`w-full inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-2 text-sm font-semibold
-            ${
-              hasValidLink
-                ? "border-gray-200 text-gray-700 hover:bg-gray-50"
-                : "border-gray-100 text-gray-400 cursor-not-allowed"
-            }`}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (!hasValidLink) e.preventDefault();
-              }}
-            >
-              <Github size={16} />
-              View on GitHub
-              <ExternalLink size={16} className="ml-1" />
-            </a>
-          </div>
         </div>
-        <div className="card-back absolute inset-0 backface-hidden rotate-y-180 bg-white p-6 rounded-xl shadow-md border border-gray-100 h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        <div className="card-back absolute inset-0 backface-hidden rotate-y-180 bg-white p-4 rounded-xl shadow-md border border-gray-100 h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
           {/* Absolute Positioned Flip Icon */}
           <img
             src={flip_image}
             alt="Flip Icon"
+            onMouseEnter={handleFlip}
             className="absolute top-4 right-4 w-6 h-6 cursor-pointer z-20 opacity-50 hover:opacity-100 transition-opacity"
           />
           {/* Key Achievements */}
