@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./index.css"; // must be before component CSS imports
-
+import imageFixedWallpaper from "./Images/backgorund.png";
 import "./App.css";
 
 import { Link, Element } from "react-scroll";
@@ -26,18 +26,21 @@ function App() {
   return (
     <div>
       {/* navigation */}
+      <div
+        className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{ backgroundImage: `url(${imageFixedWallpaper})` }}
+      />
       <div className="nav container d-none d-sm-block ">
-        
-          <title>Rakshit Ranpariya | React Developer</title>
-          <meta
-            name="description"
-            content="Welcome to my portfolio. Explore my latest React projects, case studies, and technical skills. Get in touch with me if you're interested in collaborating!"
-          />
-          <link
-            rel="canonical"
-            href="https://rakshitranpariya.github.io/portfolio/"
-          />
-        
+        <title>Rakshit Ranpariya | React Developer</title>
+        <meta
+          name="description"
+          content="Welcome to my portfolio. Explore my latest React projects, case studies, and technical skills. Get in touch with me if you're interested in collaborating!"
+        />
+        <link
+          rel="canonical"
+          href="https://rakshitranpariya.github.io/portfolio/"
+        />
+
         <nav>
           <div className="options">
             <Link

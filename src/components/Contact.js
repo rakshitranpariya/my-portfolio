@@ -3,7 +3,7 @@ import { Mail, Phone, Linkedin } from "lucide-react";
 
 function Contact() {
   return (
-    <section id="Contact" className="bg-gray-50 py-12">
+    <section id="Contact" className="py-12">
       <div className="max-w-6xl mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-10">
@@ -12,14 +12,15 @@ function Contact() {
           </h2>
           <div className="mt-3 h-1 w-20 bg-blue-600 mx-auto rounded" />
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, collaborations, or just having a chat about technology.
+            I'm always open to discussing new opportunities, collaborations, or
+            just having a chat about technology.
           </p>
         </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Email */}
-          <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 text-center">
+          <div className=" rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 p-6 text-center">
             <div className="mx-auto w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700">
               <Mail size={22} />
             </div>
@@ -33,7 +34,7 @@ function Contact() {
           </div>
 
           {/* Phone */}
-          <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 text-center">
+          <div className=" rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10  p-6 text-center">
             <div className="mx-auto w-14 h-14 rounded-full bg-green-50 flex items-center justify-center text-green-700">
               <Phone size={22} />
             </div>
@@ -47,7 +48,7 @@ function Contact() {
           </div>
 
           {/* LinkedIn */}
-          <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 text-center">
+          <div className=" rounded-[40px]  bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 p-6 text-center">
             <div className="mx-auto w-14 h-14 rounded-full bg-sky-50 flex items-center justify-center text-sky-700">
               <Linkedin size={22} />
             </div>

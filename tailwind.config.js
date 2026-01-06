@@ -37,6 +37,8 @@ module.exports = {
       },
     },
   },
-
+  filters: {
+    "glass-distortion": 'url(#glass-distortion)',
+  },
   plugins: [],
 };
