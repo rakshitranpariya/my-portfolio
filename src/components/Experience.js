@@ -24,7 +24,7 @@ function Experience() {
   };
 
   return (
-    <div className="antialiased bg-gray-100 text-gray-800 py-5">
+    <div className="antialiased text-gray-800 py-5">
       <div className="text-center mb-1">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
           Experience
@@ -32,7 +32,7 @@ function Experience() {
         <div className="mt-3 h-1 w-20 bg-blue-600 mx-auto rounded" />
       </div>
       <div className="relative mx-auto px-6 flex flex-col space-y-8">
-        <div className="absolute z-0 w-1 h-full bg-white shadow-md inset-0 left-13 xs:left-9 xs:top-6 md:mx-auto md:right-0 md:left-0"></div>
+        <div className="absolute z-0 w-1 h-full bg-gray-300 shadow-md inset-0 left-13 xs:left-9 xs:top-6 md:mx-auto md:right-0 md:left-0"></div>
 
         {experienceData.map((item, index) => (
           <div key={item.id ?? index}>

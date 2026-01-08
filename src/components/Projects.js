@@ -24,8 +24,8 @@ export default function Project() {
   }, []);
 
   return (
-    <section id="Projects" className="bg-gray-50 py-12">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="Projects" className=" py-12">
+      <div className=" justify-center w-full px-4">
         {/* Title like screenshot */}
         <div className="text-center mb-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">

@@ -27,7 +27,7 @@ function Education() {
   );
 
   return (
-    <section className="bg-gray-50 py-12">
+    <section className=" py-12">
       <div className="max-w-6xl mx-auto px-4">
         {/* Title like screenshot */}
         <div className="text-center mb-10">

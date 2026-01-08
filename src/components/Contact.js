@@ -3,7 +3,10 @@ import { Mail, Phone, Linkedin } from "lucide-react";
 
 function Contact() {
   return (
-    <section id="Contact" className="py-12">
+    <section
+      id="Contact"
+      className="pb-12 pt-[150px] h-screen   justify-center "
+    >
       <div className="max-w-6xl mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-10">
@@ -18,7 +21,7 @@ function Contact() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {/* Email */}
           <div className=" rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 p-6 text-center">
             <div className="mx-auto w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-700">

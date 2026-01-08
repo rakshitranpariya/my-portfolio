@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./index.css"; // must be before component CSS imports
-import imageFixedWallpaper from "./Images/backgorund.png";
+import imageFixedWallpaper from "./Images/image1.png";
 import "./App.css";
 
 import { Link, Element } from "react-scroll";
