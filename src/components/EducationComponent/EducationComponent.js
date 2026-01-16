@@ -39,7 +39,7 @@ function EducationComponent({ data }) {
     ToMonth
   )} ${ToYear}`;
   return (
-    <div className="flex flex-col h-full min-h-0  rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10  p-6 md:max-h-96 ">
+    <div className="flex flex-col h-full min-h-0 z-1 rounded-[40px] bg-white/2 dark:bg-black/30  backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10  p-6 md:max-h-96 ">
       {/* Header row: icon + titles */}
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 rounded-lg mt-2 bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
@@ -50,16 +50,16 @@ function EducationComponent({ data }) {
               className="w-full h-full object-cover"
             />
           ) : (
-            <span className="text-blue-700 text-xl">🎓</span>
+            <span className="text-xl">🎓</span>
           )}
         </div>
 
         <div className="min-w-0">
-          <h3 className="text-lg font-bold text-gray-900 leading-snug text-left">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white/90 leading-snug text-left">
             {Degree}
             {Major ? ` of ${Major}` : ""}
           </h3>
-          <div className="text-blue-600 font-semibold truncate text-left ">
+          <div className="text-blue-600 dark:text-blue-500 font-semibold truncate text-left ">
             {InstitutionName}
           </div>
         </div>
@@ -95,7 +95,7 @@ function EducationComponent({ data }) {
           {Courses.map((c, i) => (
             <span
               key={i}
-              className=" px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100 "
+              className=" px-2.5 py-1 bg-blue-50 text-blue-600 dark:text-white/90 dark:!bg-gray-800  border border-blue-100 dark:!border-gray-700  font-medium rounded-full text-xs"
             >
               {c}
             </span>

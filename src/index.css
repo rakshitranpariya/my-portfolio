@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@custom-variant hover (&:hover);
+
 @layer utilities {
   .no-scrollbar {
     -ms-overflow-style: none; /* IE/Edge legacy */
@@ -33,7 +35,7 @@ body {
     @apply md:ml-0  md:pl-0 md:w-1/2 md:pr-16;
   }
   .timeline-pointer {
-    @apply absolute  inset-5 left-[22px] h-5 w-5 transform  -top-5 rotate-[135deg] xs:left-15 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-10 md:top-10 bg-transparent backdrop-blur-lg border border-black/20 shadow-lg shadow-black/60;
+    @apply absolute  inset-5 left-[22px] h-5 w-5 transform  -top-5 rotate-[135deg] xs:left-15 xs:rotate-[45deg] xs:top-10 md:rotate-45 md:left-10 md:top-10 bg-transparent backdrop-blur-lg border-2 border-black/20 dark:border-black/90  shadow-lg shadow-black/60;
     clip-path: polygon(0 0, 100% 100%, 0 100%);
   }
 

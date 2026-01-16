@@ -43,8 +43,8 @@ function CertificationComponent({ data }) {
   const hasLink = Link && Link !== "NA";
 
   return (
-    <div className="col-span-full">
-      <div className="rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10   p-6 ">
+    <div className="col-span-full z-1">
+      <div className="rounded-[40px] bg-white/2 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 dark:bg-black/30 p-6 ">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex items-start gap-4 min-w-0">
             <div className="flex items-start gap-4">
@@ -74,10 +74,10 @@ function CertificationComponent({ data }) {
 
               {/* Content */}
               <div className="min-w-0">
-                <h3 className="m-0 text-lg font-semibold text-gray-900 text-left ">
+                <h3 className="m-0 text-lg font-semibold text-gray-900 dark:text-white/90 text-left ">
                   {Title}
                 </h3>
-                <div className="mt-0 text-base font-semibold text-blue-700 text-left">
+                <div className="mt-0 text-base font-semibold text-blue-700 dark:text-blue-500 text-left">
                   {InstitutionName}
                 </div>
                 <div className="mt-0 text-sm text-gray-600 text-left">
@@ -94,10 +94,10 @@ function CertificationComponent({ data }) {
                 href={Link}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full md:w-auto justify-center items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50"
+                className="inline-flex w-full md:w-auto justify-center items-center gap-2 rounded-lg rounded-3xl border border-gray-300 dark:!border-gray-600 bg-white dark:!bg-gray-800  px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-100 no-underline hover:bg-gray-50"
               >
                 View Certificate
-                <ExternalLink size={16} className="text-gray-700" />
+                <ExternalLink size={16} className="text-gray-700 dark:text-gray-400 " />
               </a>
             ) : null}
           </div>

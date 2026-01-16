@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./public/index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class", // This is essential!
+
   theme: {
     screens: {
       xs: "480px",
@@ -38,7 +40,7 @@ module.exports = {
     },
   },
   filters: {
-    "glass-distortion": 'url(#glass-distortion)',
+    "glass-distortion": "url(#glass-distortion)",
   },
   plugins: [],
 };

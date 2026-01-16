@@ -46,13 +46,13 @@ const ExperienceComponent = ({ sendData, left = false }) => {
         )} ${ToYear}`;
 
   return (
-    <div className="relative z-10 ">
+    <div className="relative ">
       <div className=" timeline-img " />
       <div
         className={`relative flex flex-col md:flex-row items-start md:gap-6 `}
       >
         <div
-          className={`order-2 ${
+          className={`order-2  ${
             left ? "md:order-1" : "md:order-2"
           } timeline-container ${left ? "timeline-container-left " : ""}`}
         >
@@ -63,7 +63,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
             aria-hidden="true"
           />
 
-          <div className="bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 p-6 rounded-[40px] shadow-md">
+          <div className="bg-white/2 backdrop-blur-sm border border-white/30 dark:!border-black/30 dark:bg-black/30 shadow-xl shadow-black/10 p-6 rounded-[40px]  ">
             {/* Header: Role + Company */}
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 mt-0 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center overflow-hidden">
@@ -74,41 +74,41 @@ const ExperienceComponent = ({ sendData, left = false }) => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <span className="text-blue-700 text-xl">🎓</span>
+                  <span className="text-blue-500 text-xl">🎓</span>
                 )}
               </div>
 
               <div className="min-w-0">
-                <h2 className="text-xl md:text-2xl font-bold text-gray-900 m-0">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white m-0">
                   {Role}
                 </h2>
-                <p className=" text-blue-600 font-semibold">{CompanyName}</p>
+                <p className=" text-blue-600 dark:text-blue-400 font-semibold">{CompanyName}</p>
               </div>
             </div>
             {/* Meta row */}
-            <div className="mt-0 md:mt-3 flex flex-wrap gap-x-4 gap-y-2 md:gap-3 text-sm text-gray-500">
+            <div className="mt-0 md:mt-3 flex flex-wrap gap-x-4 gap-y-2 md:gap-3 text-sm text-gray-500 dark:text-gray-400">
               {Location && (
                 <span className="flex items-center gap-1">
-                  <MapPin size={14} className="text-gray-400" />
+                  <MapPin size={14}  />
                   {Location}
                 </span>
               )}
 
               {EmploymentType && (
                 <span className="flex items-center gap-1">
-                  <BookOpen size={14} className="text-gray-400" />
+                  <BookOpen size={14}  />
                   {EmploymentType}
                 </span>
               )}
               <span className="inline-flex items-center gap-1 text-sm md:hidden ">
-                <Calendar size={14} className="text-gray-400 " />
+                <Calendar size={14}  />
                 {formattedDate}
               </span>
             </div>
 
             {/* Responsibilities */}
             {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (
-              <ul className="mt-4 list-disc list-outside ml-4 space-y-1 text-sm text-gray-700">
+              <ul className="mt-4 list-disc list-outside ml-4 space-y-1 text-sm text-gray-700 dark:text-white/50">
                 {Responsibilities.map((item, idx) => (
                   <li key={idx} className="text-justify pr-6">
                     {item}
@@ -123,7 +123,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
                 {TechStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
+                    className="px-2.5 py-1 bg-blue-50 text-blue-600 dark:text-white/90 dark:!bg-gray-800  border border-blue-100 dark:!border-gray-700  text-xs font-medium rounded-full"
                   >
                     {tech}
                   </span>
@@ -140,7 +140,7 @@ const ExperienceComponent = ({ sendData, left = false }) => {
             left ? "md:mr-auto" : "md:ml-auto"
           } aria-hidden="true" relative `}
         >
-          <span className="hidden md:flex items-center gap-1 font-bold  md:text-lg text-gray-600 ">
+          <span className="hidden md:flex items-center gap-1 font-bold  md:text-lg text-gray-600 dark:text-gray-400 ">
             {/* <Calendar size={21} className="text-gray-10000 " /> */}
             {formattedDate}
           </span>

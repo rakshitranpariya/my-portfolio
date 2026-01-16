@@ -54,10 +54,10 @@ export default function ProjectComponent({ data }) {
         {
           "[&_.card-inner]:[transform:rotateY(180deg)]": isFlipped,
         }
-      )}
+      ) }
     >
-      <div className=" h-full w-full transition-transform duration-500 [transform-style:preserve-3d] card-inner">
-        <div className="card-front bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 flex flex-col backface-hidden pt-4 px-4 pb-3 rounded-[40px]  h-full w-full [backface-visibility:hidden]">
+      <div className=" h-full w-full transition-transform duration-500 [transform-style:preserve-3d] card-inner z-2">
+        <div className="card-front bg-white/2  dark:bg-black/30 backdrop-blur-sm border border-white/30 dark:!border-black/30 shadow-xl shadow-black/10 flex flex-col backface-hidden pt-4 px-4 pb-3 rounded-[40px]  h-full w-full [backface-visibility:hidden]">
           {/* Absolute Positioned Flip Icon */}
           <img
             src={flip_image}
@@ -80,21 +80,21 @@ export default function ProjectComponent({ data }) {
           )}
           {/* Title */}
           <div className="flex flex-row justify-between items-start  gap-2 mb-2 pr-8">
-            <h3 className="text-xl font-extrabold text-gray-900">
+            <h3 className="text-xl font-extrabold text-gray-900 dark:!text-white/90">
               {ProjectName}
             </h3>
           </div>
 
           {/* Date row */}
 
-          <div className="mt-0 flex items-center gap-2 text-sm text-gray-500">
-            <CalendarDays size={16} className="text-gray-400" />
+          <div className="mt-0 flex items-center gap-2 text-sm text-gray-500 dark:text-white/50">
+            <CalendarDays size={16} className=" " />
             <span>{formattedDate}</span>
           </div>
 
           {/* Description */}
           {Description && (
-            <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+            <p className="mt-3 text-sm text-gray-600 dark:text-white/50 leading-relaxed">
               {Description}
             </p>
           )}
@@ -105,7 +105,7 @@ export default function ProjectComponent({ data }) {
               {TechStack.map((t, i) => (
                 <span
                   key={i}
-                  className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
+                  className="px-2.5 py-1  text-xs font-medium rounded-full bg-blue-50 text-blue-600 dark:text-white/90 dark:!bg-gray-800  border border-blue-100 dark:!border-gray-700 "
                 >
                   {t}
                 </span>
@@ -113,7 +113,7 @@ export default function ProjectComponent({ data }) {
             </div>
           )}
         </div>
-        <div className="card-back absolute bg-white/2 backdrop-blur-sm border border-white/30 shadow-xl shadow-black/10 inset-0 backface-hidden pt-4 px-4 pb-3 rotate-y-180  p-4 rounded-[40px]  h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        <div className="card-back absolute bg-white/2 dark:bg-black/30 backdrop-blur-sm border border-white/30  dark:!border-black/30  shadow-xl shadow-black/10 inset-0 backface-hidden pt-4 px-4 pb-3 rotate-y-180  p-4 rounded-[40px]  h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
           {/* Absolute Positioned Flip Icon */}
           <img
             src={flip_image}
@@ -124,10 +124,10 @@ export default function ProjectComponent({ data }) {
           {/* Key Achievements */}
           {Array.isArray(Responsibilities) && Responsibilities.length > 0 && (
             <div className="mt-2">
-              <div className="text-sm font-bold text-gray-900">
+              <div className="text-sm font-bold text-black dark:!text-white/90">
                 Contributions:
               </div>
-              <ul className="mt-2 list-disc ml-5 space-y-2 text-sm text-gray-600">
+              <ul className="mt-2 list-disc ml-5 space-y-2 text-sm text-gray-600 dark:text-white/50">
                 {Responsibilities.map((r, i) => (
                   <li key={i}>{r}</li>
                 ))}
