@@ -32,7 +32,7 @@ function App() {
   return (
     <div className={`${isToggled ? "dark" : ""} min-h-screen`}>
       {/* navigation */}
-      <div className="fixed z-15  top-10 left-10">
+      <div className="fixed z-15  top-7 left-8">
         <label className="relative inline-flex items-center cursor-pointer">
           {/* Hidden checkbox */}
           <input
