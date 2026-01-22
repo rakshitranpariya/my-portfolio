@@ -27,7 +27,6 @@ export default function Project() {
 
   return (
     <section id="Projects" className=" pt-24">
-      // Projects.js
       <Helmet>
         <title>Projects | Rakshit Ranpariya Portfolio</title>
         <meta
