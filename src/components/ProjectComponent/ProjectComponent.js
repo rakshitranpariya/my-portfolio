@@ -122,7 +122,10 @@ export default function ProjectComponent({ data }) {
             </div>
           )}
         </div>
-        <div className="card-back absolute bg-white/2 dark:bg-black/30 backdrop-blur-lg border border-white/30  dark:!border-black/30  shadow-xl shadow-black/10 inset-0 backface-hidden pt-4 px-4 pb-3 rotate-y-180  p-4 rounded-[40px]  h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        <div
+          className="card-back absolute bg-white/2 dark:bg-black/30 backdrop-blur-lg border border-white/30  dark:!border-black/30  shadow-xl shadow-black/10 inset-0 backface-hidden pt-4 px-4 pb-3 rotate-y-180  p-4 rounded-[40px]  h-full w-full overflow-y-auto [transform:rotateY(180deg)] [backface-visibility:hidden]"
+          onClick={handleToggle}
+        >
           {/* Absolute Positioned Flip Icon */}
           <img
             src={flip_image}
